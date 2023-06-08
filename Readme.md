@@ -1,8 +1,9 @@
 # webparts
 
-## 2019 SPFX onpremises - Environment set up
+## Environment set up
 
-## SPFX Version Compatibility 
+## SPFX Version Compatibility
+### 2019 SPFX onpremises  
 
 ### Install-Module -Name SharePointPnPPowerShell2019 
 
