@@ -26,4 +26,6 @@
 ### Executar na linha de comandos como ADMIN 
 ### setx NODE_OPTIONS "--max_old_space_size=4096" /M 
 
-# fix yo generator
+## fix yo generator
+
+## debug em páginas:  ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js
