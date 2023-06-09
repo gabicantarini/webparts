@@ -40,22 +40,20 @@ setx NODE_OPTIONS "--max_old_space_size=4096" /M
 
 ```Yeoman Generator:  yo @microsoft/sharepoint --skip-install ```
  
-#### IMPORTANT: build webpart, undo package.json.  
-#### Commit empty webpart and install needed packages. 
+* IMPORTANT: build webpart, undo package.json.  
+* Commit empty webpart and install needed packages. 
 
 ### Setup to use PNPJS last version and other components: 
 
-### React version: 
+#### React version: 
  
-```npm install react@17.0.2 react-dom@17.0.2 --save  
+```npm install react@17.0.2 react-dom@17.0.2 --save ``` 
 
-#### Install version 17 for React types:
+* Install version 17 for React types:
 ```
-npm install @types/react@17.0.48 @types/react-dom@17.0.17 --save-dev  
-
+npm install @types/react@17.0.48 @types/react-dom@17.0.17 --save-dev
 Install Typescript version 4.4.4:  
 npm install typescript@4.4.4 --save-dev  
-
 Install PNPJS version 2.14.0:  
 npm install @pnp/sp@2.14.0 --save
 ```
