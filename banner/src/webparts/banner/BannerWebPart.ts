@@ -32,6 +32,7 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
     ReactDom.unmountComponentAtNode(this.domElement);
   }
 
+  //@ts-ignore
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
