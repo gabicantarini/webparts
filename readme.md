@@ -9,9 +9,7 @@ git clone the repo
 npm i
 npm i -g gulp
 gulp
-```
-
-### Build options
+```### Build options
 
 gulp clean - TODO
 gulp test - TODO
