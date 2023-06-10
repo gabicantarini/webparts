@@ -10,7 +10,6 @@ npm i
 npm i -g gulp
 gulp
 ```
-teste
 
 This package produces the following:
 
