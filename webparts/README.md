@@ -14,7 +14,7 @@ Short summary on functionality and used technologies.
 - [SharePoint Framework](https://aka.ms/spfx)
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+>  [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ Short summary on functionality and used technologies.
 
 ## Disclaimer
 
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+**TEST _AS IS_ INFORMATION.**
 
 ---
 
