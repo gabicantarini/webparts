@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/banner/BannerWebPart.manifest.json"
         }
       ]
+    },
+    "footer-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/footer/FooterWebPart.js",
+          "manifest": "./src/webparts/footer/FooterWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js"
+    "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js",
+    "FooterWebPartStrings": "lib/webparts/footer/loc/{locale}.js"
   }
 }
