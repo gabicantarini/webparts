@@ -1,6 +1,6 @@
 import { DisplayMode } from '@microsoft/sp-core-library';
 import { ISearchResult } from '@pnp/sp/search';
-//import { IImage } from '../assets/welcome-dark.png';
+
 
 export interface IHighlightsManagementItem {
   order: number;
@@ -19,7 +19,7 @@ export interface IBannerItem {
   category?: string;
   tags?: ITags[];
   lead?: string;
-  //image: IImage;
+  image: IImage;
   publishDate: Date;
   contentTypeName: string;
 }
@@ -53,4 +53,9 @@ export interface ISearchResultBanner extends ISearchResult {
   BannerEndDateOWSDATE: string;
   ContentTypeNameOWSTEXT: string;
   LinkOWSURLH: string;
+}
+
+export interface IImage {
+  src: string;
+  alt: string;
 }
