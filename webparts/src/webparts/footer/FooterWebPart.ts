@@ -9,7 +9,7 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
 import * as strings from 'FooterWebPartStrings';
-import Footer from './components/Footer';
+import { Footer } from './components/Footer';
 import { IFooterProps } from './components/IFooterProps';
 
 export interface IFooterWebPartProps {
@@ -25,11 +25,6 @@ export default class FooterWebPart extends BaseClientSideWebPart<IFooterWebPartP
     const element: React.ReactElement<IFooterProps> = React.createElement(
       Footer,
       {
-        description: this.properties.description,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
       }
     );
 
