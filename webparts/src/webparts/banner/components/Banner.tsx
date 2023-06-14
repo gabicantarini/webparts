@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { sp } from '@pnp/sp';
 import '@pnp/sp/items';
 import '@pnp/sp/lists';
@@ -11,18 +12,19 @@ import SwiperCore, { Autoplay, Navigation, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
+import { Shared } from './Shared';
 import { IContextProps } from './Entities';
 import { Context } from './Context';
-
+SwiperCore.use([Thumbs, Autoplay, Navigation]);
 
 export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren<IBannerProps>) => {
   const [bannerItems, setBannerItems] = useState([] as IBannerItem[]);
-  // const [swiper, updateSwiper] = useState(undefined);
+  //const [swiper, updateSwiper] = useState(undefined);
   const urlCode: string = typeof props.urlCode !== 'undefined' ? `?sc=${props.urlCode}` : '';
   const sharedCode: string = typeof props.sharedCode !== 'undefined' ? `?sc=${props.sharedCode}` : '';
   const context: IContextProps = React.useContext(Context);
 
-  if (Utils.isEditMode(props.displayMode)) {
+  if (Shared.isEditMode(props.displayMode)) {
     return <></>;
   }
 
@@ -85,8 +87,8 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
               lead: item.Lead,
               tags: item.Tags ?? { Label: item.Tags.Label, TermID: item.Tags.TermID },
               category: item.CategoryName,
-              image: Utils.getImageValue(item.ThumbnailImage),
-              publishDate: Utils.getDateFromDisplayTemplate(item.PublicationDate),
+              image: Shared.getImageValue(item.ThumbnailImage),
+              publishDate: Shared.getDateFromDisplayTemplate(item.PublicationDate),
               contentTypeName: item.ContentTypeName
             };
           });
@@ -113,12 +115,12 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
             title: spItem.Title,
             path: spItem.Link ?? spItem.Link.Description,
             lead: spItem.Lead,
-            tags: spItem.Tags ?? Utils.getMetadataValue(spItem.Tags),
+            tags: spItem.Tags ?? Shared.getMetadataValue(spItem.Tags),
             category: spItem.CategoryName,
             image:
               spItem.FieldValuesAsHtml.x005f_ThumbnailImage ??
-              Utils.getImageValue(spItem.FieldValuesAsHtml.x005f_ThumbnailImage),
-            publishDate: Utils.getDateFromDisplayTemplate(spItem.PublicationDate),
+              Shared.getImageValue(spItem.FieldValuesAsHtml.x005f_ThumbnailImage),
+            publishDate: Shared.getDateFromDisplayTemplate(spItem.PublicationDate),
             contentTypeName: spItem.ContentTypeName
           };
         });
@@ -142,7 +144,9 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
         ContentTypeName: item.contentTypeName
       };
 
-      Utils.sendWsRequest<ITrackModel, void>({
+      
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      Shared.sendWsRequest<ITrackModel, void>({
         wpContext: context.wpContext,
         method: 'TrackPage',
         service: 'TrackingService',
@@ -301,7 +305,7 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
                   <div></div>
                   <div></div>
                   <div className='info'>
-                    <p className='date'>{Utils.formatDate(item.publishDate)}</p>
+                    <p className='date'>{Shared.formatDate(item.publishDate)}</p>
                     <p className='title'>{item.title}</p>
                   </div>
                 </SwiperSlide>
