@@ -1,6 +1,18 @@
+import { sp } from '@pnp/sp';
+import '@pnp/sp/items';
+import '@pnp/sp/lists';
+import { IRenderListDataParameters } from '@pnp/sp/lists';
+import '@pnp/sp/search';
+import '@pnp/sp/webs';
 import * as React from 'react';
 import { IBannerItem, IBannerProps, ITrackModel } from './IBannerProps';
 import { FunctionComponent, PropsWithChildren, useEffect, useRef, useState } from 'react';
+import SwiperCore, { Autoplay, Navigation, Thumbs } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import { IContextProps } from './Entities';
+import { Context } from './Context';
 
 
 export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren<IBannerProps>) => {
@@ -242,12 +254,12 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
                           </div>
                         </div>
                       )}
-                      <InfoLinks
+                      <>
                         publishDate={item.publishDate}
                         shareLink={`${item.path}${sharedCode}`}
                         leftSide
                         darkMode
-                      />
+                      </>
                     </div>
                   </div>
                 </SwiperSlide>
