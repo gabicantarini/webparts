@@ -1,6 +1,6 @@
 import { DisplayMode } from '@microsoft/sp-core-library';
 import { ISearchResult } from '@pnp/sp/search';
-
+import { WebPartContext } from '@microsoft/sp-webpart-base';
 
 export interface IHighlightsManagementItem {
   order: number;
@@ -58,4 +58,12 @@ export interface ISearchResultBanner extends ISearchResult {
 export interface IImage {
   src: string;
   alt: string;
+}
+
+export interface IWsRequest<T> {
+  wpContext?: WebPartContext;
+  service: string;
+  method: string;
+  input?: T;
+  wsMethod?: string;
 }
