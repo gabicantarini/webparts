@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import {
   BaseClientSideWebPart,
   WebPartContext
@@ -23,8 +24,8 @@ export interface IHeaderWebPartProps {
 }
 
 export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartProps> {
-  public onInit(): Promise<void> {      
-    sp.setup(this.context);
+  public onInit(): Promise<void> {     
+    sp.setup(this.context as any);    //workaround for yo incompatible version
     return super.onInit();
   }
 

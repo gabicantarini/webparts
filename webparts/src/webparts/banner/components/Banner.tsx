@@ -24,9 +24,9 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
   const sharedCode: string = typeof props.sharedCode !== 'undefined' ? `?sc=${props.sharedCode}` : '';
   const context: IContextProps = React.useContext(Context);
 
-  if (Shared.isEditMode(props.displayMode)) {
+  /*if (Shared.isEditMode(props.displayMode)) {
     return <></>;
-  }
+  }*/
 
   useEffect(() => {
     const date: Date = new Date();
@@ -173,7 +173,7 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
       // Add the active class to the corresponding slide in the second swiper
       // tslint:disable-next-line: no-any
       const slideElements: any = secondSwiperRef.current.slides;
-      slideElements.forEach((slide, index) => {
+      slideElements.forEach((slide: any, index: any) => {
         slide.classList.toggle('swiper-slide-active', index === activeSlideIndex);
       });
     }
@@ -194,7 +194,7 @@ export const Banner: FunctionComponent<IBannerProps> = (props: PropsWithChildren
         firstSwiperRef.current.slideTo(activeSlideIndex); // Slide to the corresponding active slide in the first swiper
 
         // Add the active class to the clicked slide
-        slideElements.forEach((slide, index) => {
+        slideElements.forEach((slide: any, index: any) => {
           slide.classList.toggle('swiper-slide-active', index === activeSlideIndex);
         });
       }
